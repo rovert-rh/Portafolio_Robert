@@ -1,0 +1,165 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import Html from "./icons/Html.astro"
+import Css from "./icons/Css.astro"
+import Shopify from "./icons/Shopify.astro"
+import Javascript from "./icons/Javascript.astro"
+import React from "./icons/React.astro"
+import Express from "./icons/Express.astro"
+import MongoDB from "./icons/MongoDB.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#ef652a] text-white",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#2965f1] text-white",
+    icon: Css,
+  },
+  SHOPIFY: {
+    name: "Shopify",
+    class: "bg-[#5E8E3E] text-white",
+    icon: Shopify,
+  },
+  JAVASCRIPT: {
+    name: "Javascript",
+    class: "bg-[#f0db4f] text-black",
+    icon: Javascript,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#2965f1] text-white",
+    icon: React,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-[#000] text-white",
+    icon: Express,
+  },
+  MONGO: {
+    name: "MongoDB",
+    class: "bg-[#b2ffbd] text-black",
+    icon: MongoDB,
+  },
+  
+}
+const PROJECTS = [
+{
+    title: "DVUX - Agencia Creativa",
+    description:
+      "Landing Page informativa sobre los servicios de una agencia creativa, realizada con Atro y Tailwind",
+    link: "https://dvux.lat/",
+    github: "https://github.com/rovert-rh/dvux-v2.git",
+    image: "/projects/portweb-04.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "OKEI AMIGO",
+    description:
+      "Ecommerce de productos realizados artesanalmente, implementando un diseño con la marca, realizado con Shopify",
+    link: "https://okeiamigo.com/",
+    image: "/projects/portweb-07.webp",
+    tags: [TAGS.SHOPIFY,],
+  },
+  {
+    title: "SIMAO",
+    description:
+      "Landing Page informativa sobre la aplicacion de SIMAO, esta desarrollada con HTML, CSS Y JS.",
+    link: "https://simao.app/",
+    image: "/projects/portweb-06.webp",
+    tags: [TAGS.HTML, TAGS.CSS,TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Ezencial",
+    description:
+      "Lading Page informativa sobre los servicios de terapias holistica, con más informacion de sus servicios a ofrecer, realizada en HTML, CSS y JS",
+    link: "https://www.ezencial.com.ec/",
+    image: "/projects/portweb-01.webp",
+    tags: [TAGS.HTML, TAGS.CSS,TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Boster ST",
+    description:
+      "Aplicacion Web sobre una plataforma de emparejamiento de streamers, realizada con Node.js, MongoDB y React",
+    link: "https://bosterst.netlify.app",
+    image: "/projects/portweb-02.webp",
+    tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.MONGO],
+  },
+  {
+    title: "Gold Jeans",
+    description:
+      "Pagina Web, donde se muestra la informacion de la empresa que vende pantalones e igual realice el ecommerce en shopify.",
+    link: "https://goldjeansmx.netlify.app/",
+    image: "/projects/portweb-05.webp",
+    tags: [TAGS.HTML, TAGS.CSS,TAGS.JAVASCRIPT],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
