@@ -1,10 +1,11 @@
 ---
-const personalImageAlt = "Miguel Ángel"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
-import CVIcon from "@/components/icons/CV.astro"
+const personalImageAlt = "Miguel Ángel";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import CVIcon from "@/components/icons/CV.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
 ---
 
 <div class="max-w-xl">
@@ -33,7 +34,8 @@ import CVIcon from "@/components/icons/CV.astro"
   >
     +8 años de experiencia. <strong
       >Desarrollador Full-Stack || Especialista en Infraestructura Cloud</strong
-    > Puebla, México. Especializado en el desarrollo de aplicaciones web y implementaciones de Infraestructura Cloud.
+    > Puebla, México. Especializado en el desarrollo de aplicaciones web y implementaciones
+    de Infraestructura Cloud.
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:robertoireyes.m@gmail.com">
@@ -44,9 +46,15 @@ import CVIcon from "@/components/icons/CV.astro"
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
-    <SocialPill href="https://drive.google.com/file/d/1Knf6hgUpUqDD4cY4hYUJQGOiS7iUZC1z/view?usp=sharing">
+    <SocialPill
+      href="https://drive.google.com/file/d/1ZlJGDzWcktH9G1kDBItFGPpx_UsYltA8/view?usp=sharing"
+    >
       <CVIcon class="size-4" />
       CV
+    </SocialPill>
+    <SocialPill href="https://github.com/rovert-rh">
+      <GitHubIcon class="size-4" />
+      GitHub
     </SocialPill>
   </nav>
 </div>
